@@ -25,11 +25,11 @@ if (!empty($id)) {
         $retorna = ['status' => true, 'dados' => $row_usuario];
     }else{
         // Se não houver registros, retorna uma margem de erro
-        $retorna = ['status' => false, 'msg' => "<div class='alert-danger' role='alert'>Erro: Nenhum usuário encontrado!</div>"];
+        $retorna = ['status' => false, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Nenhum usuário encontrado!</div>"];
     }
 } else {
     // Se o ID estiver vazio, retorna uma mensagem de erro
-    $retorna = ['status' => false, 'msg' => "<div class='alert-danger' role='alert'>Erro: Nenhum usuário encontrado!</div>"];
+    $retorna = ['status' => false, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Nenhum usuário encontrado!</div>"];
 }
 
 // Retorna o resultado em formato JSON
