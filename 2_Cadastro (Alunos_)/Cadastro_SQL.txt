@@ -1,0 +1,141 @@
+CREATE DATABASE cadastro;
+
+USE cadastro;
+
+-- _________________________________
+
+CREATE TABLE IF NOT EXISTS `enderecos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `logradouro` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `numero` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `usuario_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- _________________________________
+
+-- Inserções com nomes de músicos Rock n' roll em SQL.
+-- (Obs: Escolher este ou o de baixo para ter alguns registros, sendo isto opcional)
+
+-- Inserir dados na tabela 'usuarios'
+INSERT INTO usuarios (nome, email) VALUES
+('Mick Jagger', 'mick.jagger@example.com'),
+('Jimmy Page', 'jimmy.page@example.com'),
+('Freddie Mercury', 'freddie.mercury@example.com'),
+('Joan Jett', 'joan.jett@example.com'),
+('David Bowie', 'david.bowie@example.com'),
+('Robert Plant', 'robert.plant@example.com'),
+('Axl Rose', 'axl.rose@example.com'),
+('Tina Turner', 'tina.turner@example.com'),
+('Elvis Presley', 'elvis.presley@example.com'),
+('Janis Joplin', 'janis.joplin@example.com'),
+('Bruce Springsteen', 'bruce.springsteen@example.com'),
+('Kurt Cobain', 'kurt.cobain@example.com'),
+('Stevie Nicks', 'stevie.nicks@example.com'),
+('Jimi Hendrix', 'jimi.hendrix@example.com'),
+('Bon Jovi', 'bon.jovi@example.com'),
+('Madonna', 'madonna@example.com'),
+('Chuck Berry', 'chuck.berry@example.com'),
+('Bob Dylan', 'bob.dylan@example.com'),
+('Sting', 'sting@example.com'),
+('Freddy King', 'freddy.king@example.com'),
+('B.B. King', 'bb.king@example.com'),
+('Eric Clapton', 'eric.clapton@example.com'),
+('Prince', 'prince@example.com'),
+('Aretha Franklin', 'aretha.franklin@example.com'),
+('Ray Charles', 'ray.charles@example.com'),
+('Frank Sinatra', 'frank.sinatra@example.com'),
+('Johnny Cash', 'johnny.cash@example.com'),
+('Amy Winehouse', 'amy.winehouse@example.com'),
+('George Harrison', 'george.harrison@example.com'),
+('Ringo Starr', 'ringo.starr@example.com'),
+('Paul McCartney', 'paul.mccartney@example.com'),
+('John Lennon', 'john.lennon@example.com'),
+('Buddy Holly', 'buddy.holly@example.com'),
+('Elton John', 'elton.john@example.com'),
+('Billie Holiday', 'billie.holiday@example.com'),
+('Nat King Cole', 'nat.king.cole@example.com'),
+('Diana Ross', 'diana.ross@example.com'),
+('Marvin Gaye', 'marvin.gaye@example.com'),
+('Ray Davies', 'ray.davies@example.com'),
+('Iggy Pop', 'iggy.pop@example.com'),
+('Lou Reed', 'lou.reed@example.com'),
+('Patti Smith', 'patti.smith@example.com'),
+('Steven Tyler', 'steven.tyler@example.com'),
+('Joe Perry', 'joe.perry@example.com'),
+('Ozzy Osbourne', 'ozzy.osbourne@example.com'),
+('Robert Johnson', 'robert.johnson@example.com'),
+('Ella Fitzgerald', 'ella.fitzgerald@example.com'),
+('John Bonham', 'john.bonham@example.com'),
+('Aretha Franklin II', 'aretha.franklin2@example.com'),
+('Keith Richards', 'keith.richards@example.com');
+
+
+-- Inserir dados na tabela 'enderecos'
+INSERT INTO enderecos (logradouro, numero, usuario_id) VALUES
+('Rua Rolling Stones', '123', 1), -- Mick Jagger
+('Avenida Led Zeppelin', '456', 2), -- Jimmy Page
+('Boulevard Queen', '789', 3), -- Freddie Mercury
+('Praça Runaways', '101', 4), -- Joan Jett
+('Alameda Ziggy Stardust', '202', 5), -- David Bowie
+('Caminho Led Zeppelin', '345', 6), -- Robert Plant
+('Avenida Guns N Roses', '678', 7), -- Axl Rose
+('Estrada Tina Turner', '910', 8), -- Tina Turner
+('Rua Elvis Presley', '111', 9), -- Elvis Presley
+('Avenida Janis Joplin', '222', 10), -- Janis Joplin
+('Rua Bruce Springsteen', '333', 11), -- Bruce Springsteen
+('Avenida Kurt Cobain', '444', 12), -- Kurt Cobain
+('Rua Stevie Nicks', '555', 13), -- Stevie Nicks
+('Boulevard Jimi Hendrix', '666', 14), -- Jimi Hendrix
+('Avenida Bon Jovi', '777', 15), -- Bon Jovi
+('Rua Madonna', '888', 16), -- Madonna
+('Avenida Chuck Berry', '999', 17), -- Chuck Berry
+('Rua Bob Dylan', '1011', 18), -- Bob Dylan
+('Avenida Sting', '1213', 19), -- Sting
+('Estrada Freddy King', '1415', 20), -- Freddy King
+('Rua B.B. King', '1617', 21), -- B.B. King
+('Avenida Eric Clapton', '1819', 22), -- Eric Clapton
+('Estrada Prince', '2021', 23), -- Prince
+('Boulevard Aretha Franklin', '2223', 24), -- Aretha Franklin
+('Rua Ray Charles', '2425', 25), -- Ray Charles
+('Avenida Frank Sinatra', '2627', 26), -- Frank Sinatra
+('Estrada Johnny Cash', '2829', 27), -- Johnny Cash
+('Boulevard Amy Winehouse', '3031', 28), -- Amy Winehouse
+('Rua George Harrison', '3233', 29), -- George Harrison
+('Avenida Ringo Starr', '3435', 30), -- Ringo Starr
+('Caminho Paul McCartney', '3637', 31), -- Paul McCartney
+('Boulevard John Lennon', '3839', 32), -- John Lennon
+('Rua Buddy Holly', '4041', 33), -- Buddy Holly
+('Avenida Elton John', '4243', 34), -- Elton John
+('Estrada Billie Holiday', '4445', 35), -- Billie Holiday
+('Boulevard Nat King Cole', '4647', 36), -- Nat King Cole
+('Rua Diana Ross', '4849', 37), -- Diana Ross
+('Avenida Marvin Gaye', '5051', 38), -- Marvin Gaye
+('Caminho Ray Davies', '5253', 39), -- Ray Davies
+('Boulevard Iggy Pop', '5455', 40), -- Iggy Pop
+('Rua Lou Reed', '5657', 41), -- Lou Reed
+('Avenida Patti Smith', '5859', 42), -- Patti Smith
+('Estrada Steven Tyler', '6061', 43), -- Steven Tyler
+('Boulevard Joe Perry', '6263', 44), -- Joe Perry
+('Rua Ozzy Osbourne', '6465', 45), -- Ozzy Osbourne
+('Avenida Robert Johnson', '6667', 46), -- Robert Johnson
+('Caminho Ella Fitzgerald', '6869', 47), -- Ella Fitzgerald
+('Boulevard John Bonham', '7071', 48), -- John Bonham
+('Rua Aretha Franklin', '7273', 49), -- Aretha Franklin
+('Avenida Keith Richards', '7475', 50); -- Keith Richards
+
+
+
+
+
+
+
+
