@@ -14,12 +14,19 @@ if (!empty($pagina)) {
     $inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;
 
     // Criar a QUERY para recuperar os registros do BD
-    $query_usuarios = "SELECT usr.id, usr.nome, usr.email,
+    // $query_usuarios = "SELECT usr.id, usr.nome, usr.email,
+    //                 ende.logradouro, ende.numero
+    //                 FROM usuarios AS usr 
+    //                 LEFT JOIN enderecos AS ende ON ende.usuario_id=usr.id
+    //                 ORDER BY usr.id DESC
+    //                 LIMIT $inicio, $qnt_result_pg";
+
+    $query_usuarios = "SELECT usr.id, usr.nome, usr.email, 
                     ende.logradouro, ende.numero
-                    FROM usuarios AS usr 
+                    FROM usuarios AS usr  
                     LEFT JOIN enderecos AS ende ON ende.usuario_id=usr.id
                     ORDER BY usr.id DESC
-                    LIMIT $inicio, $qnt_result_pg";
+                    LIMIT $qnt_result_pg OFFSET $inicio";
     $result_usuarios = $conn->prepare($query_usuarios);
     $result_usuarios->execute();
 
@@ -107,3 +114,6 @@ if (!empty($pagina)) {
 echo json_encode($retorna);
 
 // Um arquivo JSON (JavaScript Object Notation) é um formato leve de troca de dados que utiliza uma sintaxe fácil de ler e escrever. Ele é frequentemente usado para representar estruturas de dados simples, como pares chave-valor, arrays e objetos, e é comumente usado em comunicações entre servidores web e clientes, sendo fácil de entender tanto por humanos quanto por máquinas.
+
+
+    
